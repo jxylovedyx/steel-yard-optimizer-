@@ -1,0 +1,6 @@
+name: toy_exp
+scenario: toy
+solver: baseline_rule
+instance: data/instances/toy_instance.json
+repetitions: 1
+seed: 42

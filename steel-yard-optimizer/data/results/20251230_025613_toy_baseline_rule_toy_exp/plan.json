@@ -1,0 +1,835 @@
+{
+  "meta": {
+    "run_id": "20251230_025613_toy_baseline_rule_toy_exp",
+    "instance_id": "toy_toy",
+    "solver": "baseline_rule",
+    "created_at": "2025-12-29T18:56:13Z"
+  },
+  "line_sequences": [
+    {
+      "cutting_line_id": "L1",
+      "sequence": [
+        {
+          "plate_id": "P001",
+          "seq_no": 1,
+          "eta_seconds": 330.0,
+          "start_seconds": 330.0,
+          "finish_seconds": 396.0
+        },
+        {
+          "plate_id": "P005",
+          "seq_no": 2,
+          "eta_seconds": 396.0,
+          "start_seconds": 396.0,
+          "finish_seconds": 462.0
+        },
+        {
+          "plate_id": "P009",
+          "seq_no": 3,
+          "eta_seconds": 660.0,
+          "start_seconds": 660.0,
+          "finish_seconds": 726.0
+        },
+        {
+          "plate_id": "P013",
+          "seq_no": 4,
+          "eta_seconds": 1056.0,
+          "start_seconds": 1056.0,
+          "finish_seconds": 1122.0
+        },
+        {
+          "plate_id": "P017",
+          "seq_no": 5,
+          "eta_seconds": 1122.0,
+          "start_seconds": 1122.0,
+          "finish_seconds": 1188.0
+        },
+        {
+          "plate_id": "P021",
+          "seq_no": 6,
+          "eta_seconds": 1386.0,
+          "start_seconds": 1386.0,
+          "finish_seconds": 1452.0
+        }
+      ]
+    },
+    {
+      "cutting_line_id": "L2",
+      "sequence": [
+        {
+          "plate_id": "P002",
+          "seq_no": 1,
+          "eta_seconds": 1452.0,
+          "start_seconds": 1452.0,
+          "finish_seconds": 1518.0
+        },
+        {
+          "plate_id": "P006",
+          "seq_no": 2,
+          "eta_seconds": 1518.0,
+          "start_seconds": 1518.0,
+          "finish_seconds": 1584.0
+        },
+        {
+          "plate_id": "P010",
+          "seq_no": 3,
+          "eta_seconds": 1584.0,
+          "start_seconds": 1584.0,
+          "finish_seconds": 1650.0
+        },
+        {
+          "plate_id": "P014",
+          "seq_no": 4,
+          "eta_seconds": 1650.0,
+          "start_seconds": 1650.0,
+          "finish_seconds": 1716.0
+        },
+        {
+          "plate_id": "P018",
+          "seq_no": 5,
+          "eta_seconds": 1716.0,
+          "start_seconds": 1716.0,
+          "finish_seconds": 1782.0
+        },
+        {
+          "plate_id": "P022",
+          "seq_no": 6,
+          "eta_seconds": 1782.0,
+          "start_seconds": 1782.0,
+          "finish_seconds": 1848.0
+        }
+      ]
+    },
+    {
+      "cutting_line_id": "L3",
+      "sequence": [
+        {
+          "plate_id": "P003",
+          "seq_no": 1,
+          "eta_seconds": 1848.0,
+          "start_seconds": 1848.0,
+          "finish_seconds": 1914.0
+        },
+        {
+          "plate_id": "P007",
+          "seq_no": 2,
+          "eta_seconds": 2046.0,
+          "start_seconds": 2046.0,
+          "finish_seconds": 2112.0
+        },
+        {
+          "plate_id": "P011",
+          "seq_no": 3,
+          "eta_seconds": 2112.0,
+          "start_seconds": 2112.0,
+          "finish_seconds": 2178.0
+        },
+        {
+          "plate_id": "P015",
+          "seq_no": 4,
+          "eta_seconds": 2178.0,
+          "start_seconds": 2178.0,
+          "finish_seconds": 2244.0
+        },
+        {
+          "plate_id": "P019",
+          "seq_no": 5,
+          "eta_seconds": 2376.0,
+          "start_seconds": 2376.0,
+          "finish_seconds": 2442.0
+        },
+        {
+          "plate_id": "P023",
+          "seq_no": 6,
+          "eta_seconds": 2442.0,
+          "start_seconds": 2442.0,
+          "finish_seconds": 2508.0
+        }
+      ]
+    },
+    {
+      "cutting_line_id": "L4",
+      "sequence": [
+        {
+          "plate_id": "P004",
+          "seq_no": 1,
+          "eta_seconds": 2508.0,
+          "start_seconds": 2508.0,
+          "finish_seconds": 2574.0
+        },
+        {
+          "plate_id": "P008",
+          "seq_no": 2,
+          "eta_seconds": 2574.0,
+          "start_seconds": 2574.0,
+          "finish_seconds": 2640.0
+        },
+        {
+          "plate_id": "P012",
+          "seq_no": 3,
+          "eta_seconds": 2640.0,
+          "start_seconds": 2640.0,
+          "finish_seconds": 2706.0
+        },
+        {
+          "plate_id": "P016",
+          "seq_no": 4,
+          "eta_seconds": 2706.0,
+          "start_seconds": 2706.0,
+          "finish_seconds": 2772.0
+        },
+        {
+          "plate_id": "P020",
+          "seq_no": 5,
+          "eta_seconds": 2772.0,
+          "start_seconds": 2772.0,
+          "finish_seconds": 2838.0
+        },
+        {
+          "plate_id": "P024",
+          "seq_no": 6,
+          "eta_seconds": 2838.0,
+          "start_seconds": 2838.0,
+          "finish_seconds": 2904.0
+        }
+      ]
+    }
+  ],
+  "relocations": [
+    {
+      "task_id": "R_L1_P001_P002_1",
+      "plate_id": "P002",
+      "from": {
+        "area": "A",
+        "stack_id": "S1",
+        "level": 2
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P001_P003_2",
+      "plate_id": "P003",
+      "from": {
+        "area": "A",
+        "stack_id": "S1",
+        "level": 3
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P001_P004_3",
+      "plate_id": "P004",
+      "from": {
+        "area": "A",
+        "stack_id": "S1",
+        "level": 4
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P001_P005_4",
+      "plate_id": "P005",
+      "from": {
+        "area": "A",
+        "stack_id": "S1",
+        "level": 5
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P001_P006_5",
+      "plate_id": "P006",
+      "from": {
+        "area": "A",
+        "stack_id": "S1",
+        "level": 6
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P009_P010_6",
+      "plate_id": "P010",
+      "from": {
+        "area": "A",
+        "stack_id": "S2",
+        "level": 4
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P009_P011_7",
+      "plate_id": "P011",
+      "from": {
+        "area": "A",
+        "stack_id": "S2",
+        "level": 5
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P009_P012_8",
+      "plate_id": "P012",
+      "from": {
+        "area": "A",
+        "stack_id": "S2",
+        "level": 6
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P013_P014_9",
+      "plate_id": "P014",
+      "from": {
+        "area": "A",
+        "stack_id": "S3",
+        "level": 2
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P013_P015_10",
+      "plate_id": "P015",
+      "from": {
+        "area": "A",
+        "stack_id": "S3",
+        "level": 3
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P013_P016_11",
+      "plate_id": "P016",
+      "from": {
+        "area": "A",
+        "stack_id": "S3",
+        "level": 4
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P013_P017_12",
+      "plate_id": "P017",
+      "from": {
+        "area": "A",
+        "stack_id": "S3",
+        "level": 5
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P013_P018_13",
+      "plate_id": "P018",
+      "from": {
+        "area": "A",
+        "stack_id": "S3",
+        "level": 6
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P021_P022_14",
+      "plate_id": "P022",
+      "from": {
+        "area": "A",
+        "stack_id": "S4",
+        "level": 4
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P021_P023_15",
+      "plate_id": "P023",
+      "from": {
+        "area": "A",
+        "stack_id": "S4",
+        "level": 5
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P021_P024_16",
+      "plate_id": "P024",
+      "from": {
+        "area": "A",
+        "stack_id": "S4",
+        "level": 6
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L3_P007_P008_17",
+      "plate_id": "P008",
+      "from": {
+        "area": "A",
+        "stack_id": "S2",
+        "level": 2
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L3_P007_P009_18",
+      "plate_id": "P009",
+      "from": {
+        "area": "A",
+        "stack_id": "S2",
+        "level": 3
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L3_P019_P020_19",
+      "plate_id": "P020",
+      "from": {
+        "area": "A",
+        "stack_id": "S4",
+        "level": 2
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    },
+    {
+      "task_id": "R_L3_P019_P021_20",
+      "plate_id": "P021",
+      "from": {
+        "area": "A",
+        "stack_id": "S4",
+        "level": 3
+      },
+      "to": {
+        "buffer_id": "BUF1"
+      },
+      "reason": "unblock",
+      "estimated_seconds": 66.0
+    }
+  ],
+  "crane_tasks": [
+    {
+      "task_id": "R_L1_P001_P002_1",
+      "type": "relocate",
+      "plate_id": "P002",
+      "crane_id": "C1",
+      "start_seconds": 0.0,
+      "finish_seconds": 66.0
+    },
+    {
+      "task_id": "R_L1_P001_P003_2",
+      "type": "relocate",
+      "plate_id": "P003",
+      "crane_id": "C1",
+      "start_seconds": 66.0,
+      "finish_seconds": 132.0
+    },
+    {
+      "task_id": "R_L1_P001_P004_3",
+      "type": "relocate",
+      "plate_id": "P004",
+      "crane_id": "C1",
+      "start_seconds": 132.0,
+      "finish_seconds": 198.0
+    },
+    {
+      "task_id": "R_L1_P001_P005_4",
+      "type": "relocate",
+      "plate_id": "P005",
+      "crane_id": "C1",
+      "start_seconds": 198.0,
+      "finish_seconds": 264.0
+    },
+    {
+      "task_id": "R_L1_P001_P006_5",
+      "type": "relocate",
+      "plate_id": "P006",
+      "crane_id": "C1",
+      "start_seconds": 264.0,
+      "finish_seconds": 330.0
+    },
+    {
+      "task_id": "OUT_L1_P001_1",
+      "type": "outbound",
+      "plate_id": "P001",
+      "crane_id": "C1",
+      "start_seconds": 330.0,
+      "finish_seconds": 396.0
+    },
+    {
+      "task_id": "OUT_L1_P005_2",
+      "type": "outbound",
+      "plate_id": "P005",
+      "crane_id": "C1",
+      "start_seconds": 396.0,
+      "finish_seconds": 462.0
+    },
+    {
+      "task_id": "R_L1_P009_P010_6",
+      "type": "relocate",
+      "plate_id": "P010",
+      "crane_id": "C1",
+      "start_seconds": 462.0,
+      "finish_seconds": 528.0
+    },
+    {
+      "task_id": "R_L1_P009_P011_7",
+      "type": "relocate",
+      "plate_id": "P011",
+      "crane_id": "C1",
+      "start_seconds": 528.0,
+      "finish_seconds": 594.0
+    },
+    {
+      "task_id": "R_L1_P009_P012_8",
+      "type": "relocate",
+      "plate_id": "P012",
+      "crane_id": "C1",
+      "start_seconds": 594.0,
+      "finish_seconds": 660.0
+    },
+    {
+      "task_id": "OUT_L1_P009_3",
+      "type": "outbound",
+      "plate_id": "P009",
+      "crane_id": "C1",
+      "start_seconds": 660.0,
+      "finish_seconds": 726.0
+    },
+    {
+      "task_id": "R_L1_P013_P014_9",
+      "type": "relocate",
+      "plate_id": "P014",
+      "crane_id": "C1",
+      "start_seconds": 726.0,
+      "finish_seconds": 792.0
+    },
+    {
+      "task_id": "R_L1_P013_P015_10",
+      "type": "relocate",
+      "plate_id": "P015",
+      "crane_id": "C1",
+      "start_seconds": 792.0,
+      "finish_seconds": 858.0
+    },
+    {
+      "task_id": "R_L1_P013_P016_11",
+      "type": "relocate",
+      "plate_id": "P016",
+      "crane_id": "C1",
+      "start_seconds": 858.0,
+      "finish_seconds": 924.0
+    },
+    {
+      "task_id": "R_L1_P013_P017_12",
+      "type": "relocate",
+      "plate_id": "P017",
+      "crane_id": "C1",
+      "start_seconds": 924.0,
+      "finish_seconds": 990.0
+    },
+    {
+      "task_id": "R_L1_P013_P018_13",
+      "type": "relocate",
+      "plate_id": "P018",
+      "crane_id": "C1",
+      "start_seconds": 990.0,
+      "finish_seconds": 1056.0
+    },
+    {
+      "task_id": "OUT_L1_P013_4",
+      "type": "outbound",
+      "plate_id": "P013",
+      "crane_id": "C1",
+      "start_seconds": 1056.0,
+      "finish_seconds": 1122.0
+    },
+    {
+      "task_id": "OUT_L1_P017_5",
+      "type": "outbound",
+      "plate_id": "P017",
+      "crane_id": "C1",
+      "start_seconds": 1122.0,
+      "finish_seconds": 1188.0
+    },
+    {
+      "task_id": "R_L1_P021_P022_14",
+      "type": "relocate",
+      "plate_id": "P022",
+      "crane_id": "C1",
+      "start_seconds": 1188.0,
+      "finish_seconds": 1254.0
+    },
+    {
+      "task_id": "R_L1_P021_P023_15",
+      "type": "relocate",
+      "plate_id": "P023",
+      "crane_id": "C1",
+      "start_seconds": 1254.0,
+      "finish_seconds": 1320.0
+    },
+    {
+      "task_id": "R_L1_P021_P024_16",
+      "type": "relocate",
+      "plate_id": "P024",
+      "crane_id": "C1",
+      "start_seconds": 1320.0,
+      "finish_seconds": 1386.0
+    },
+    {
+      "task_id": "OUT_L1_P021_6",
+      "type": "outbound",
+      "plate_id": "P021",
+      "crane_id": "C1",
+      "start_seconds": 1386.0,
+      "finish_seconds": 1452.0
+    },
+    {
+      "task_id": "OUT_L2_P002_1",
+      "type": "outbound",
+      "plate_id": "P002",
+      "crane_id": "C1",
+      "start_seconds": 1452.0,
+      "finish_seconds": 1518.0
+    },
+    {
+      "task_id": "OUT_L2_P006_2",
+      "type": "outbound",
+      "plate_id": "P006",
+      "crane_id": "C1",
+      "start_seconds": 1518.0,
+      "finish_seconds": 1584.0
+    },
+    {
+      "task_id": "OUT_L2_P010_3",
+      "type": "outbound",
+      "plate_id": "P010",
+      "crane_id": "C1",
+      "start_seconds": 1584.0,
+      "finish_seconds": 1650.0
+    },
+    {
+      "task_id": "OUT_L2_P014_4",
+      "type": "outbound",
+      "plate_id": "P014",
+      "crane_id": "C1",
+      "start_seconds": 1650.0,
+      "finish_seconds": 1716.0
+    },
+    {
+      "task_id": "OUT_L2_P018_5",
+      "type": "outbound",
+      "plate_id": "P018",
+      "crane_id": "C1",
+      "start_seconds": 1716.0,
+      "finish_seconds": 1782.0
+    },
+    {
+      "task_id": "OUT_L2_P022_6",
+      "type": "outbound",
+      "plate_id": "P022",
+      "crane_id": "C1",
+      "start_seconds": 1782.0,
+      "finish_seconds": 1848.0
+    },
+    {
+      "task_id": "OUT_L3_P003_1",
+      "type": "outbound",
+      "plate_id": "P003",
+      "crane_id": "C1",
+      "start_seconds": 1848.0,
+      "finish_seconds": 1914.0
+    },
+    {
+      "task_id": "R_L3_P007_P008_17",
+      "type": "relocate",
+      "plate_id": "P008",
+      "crane_id": "C1",
+      "start_seconds": 1914.0,
+      "finish_seconds": 1980.0
+    },
+    {
+      "task_id": "R_L3_P007_P009_18",
+      "type": "relocate",
+      "plate_id": "P009",
+      "crane_id": "C1",
+      "start_seconds": 1980.0,
+      "finish_seconds": 2046.0
+    },
+    {
+      "task_id": "OUT_L3_P007_2",
+      "type": "outbound",
+      "plate_id": "P007",
+      "crane_id": "C1",
+      "start_seconds": 2046.0,
+      "finish_seconds": 2112.0
+    },
+    {
+      "task_id": "OUT_L3_P011_3",
+      "type": "outbound",
+      "plate_id": "P011",
+      "crane_id": "C1",
+      "start_seconds": 2112.0,
+      "finish_seconds": 2178.0
+    },
+    {
+      "task_id": "OUT_L3_P015_4",
+      "type": "outbound",
+      "plate_id": "P015",
+      "crane_id": "C1",
+      "start_seconds": 2178.0,
+      "finish_seconds": 2244.0
+    },
+    {
+      "task_id": "R_L3_P019_P020_19",
+      "type": "relocate",
+      "plate_id": "P020",
+      "crane_id": "C1",
+      "start_seconds": 2244.0,
+      "finish_seconds": 2310.0
+    },
+    {
+      "task_id": "R_L3_P019_P021_20",
+      "type": "relocate",
+      "plate_id": "P021",
+      "crane_id": "C1",
+      "start_seconds": 2310.0,
+      "finish_seconds": 2376.0
+    },
+    {
+      "task_id": "OUT_L3_P019_5",
+      "type": "outbound",
+      "plate_id": "P019",
+      "crane_id": "C1",
+      "start_seconds": 2376.0,
+      "finish_seconds": 2442.0
+    },
+    {
+      "task_id": "OUT_L3_P023_6",
+      "type": "outbound",
+      "plate_id": "P023",
+      "crane_id": "C1",
+      "start_seconds": 2442.0,
+      "finish_seconds": 2508.0
+    },
+    {
+      "task_id": "OUT_L4_P004_1",
+      "type": "outbound",
+      "plate_id": "P004",
+      "crane_id": "C1",
+      "start_seconds": 2508.0,
+      "finish_seconds": 2574.0
+    },
+    {
+      "task_id": "OUT_L4_P008_2",
+      "type": "outbound",
+      "plate_id": "P008",
+      "crane_id": "C1",
+      "start_seconds": 2574.0,
+      "finish_seconds": 2640.0
+    },
+    {
+      "task_id": "OUT_L4_P012_3",
+      "type": "outbound",
+      "plate_id": "P012",
+      "crane_id": "C1",
+      "start_seconds": 2640.0,
+      "finish_seconds": 2706.0
+    },
+    {
+      "task_id": "OUT_L4_P016_4",
+      "type": "outbound",
+      "plate_id": "P016",
+      "crane_id": "C1",
+      "start_seconds": 2706.0,
+      "finish_seconds": 2772.0
+    },
+    {
+      "task_id": "OUT_L4_P020_5",
+      "type": "outbound",
+      "plate_id": "P020",
+      "crane_id": "C1",
+      "start_seconds": 2772.0,
+      "finish_seconds": 2838.0
+    },
+    {
+      "task_id": "OUT_L4_P024_6",
+      "type": "outbound",
+      "plate_id": "P024",
+      "crane_id": "C1",
+      "start_seconds": 2838.0,
+      "finish_seconds": 2904.0
+    }
+  ],
+  "warnings": []
+}

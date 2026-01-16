@@ -1,0 +1,22 @@
+name: exp_002_ltr_training
+description: "collect runs -> build LTR dataset -> train xgb ranker"
+seed: 7
+
+data_collection:
+  max_runs: 500
+  solver_mode: heuristic
+  max_candidates: 128
+
+train:
+  model: xgb_ranker
+  ndcg_k: 10
+  rounds: 8000
+  early_stop: 300
+  max_bin: 256
+  max_leaves: 256
+  lr: 0.05
+  device: cuda
+
+infer:
+  solver_mode: xgb
+  model_path: models/xgb_ranker.json

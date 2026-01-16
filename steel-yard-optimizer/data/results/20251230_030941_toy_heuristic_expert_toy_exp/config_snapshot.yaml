@@ -1,0 +1,69 @@
+scenario: toy
+solver: baseline_rule
+experiment: toy_exp
+io:
+  instance_path: data/instances/toy_instance.json
+  output_dir: data/results
+logging:
+  level: INFO
+objectives:
+  strategy: lexicographic
+  makespan:
+    enabled: true
+  relocations:
+    enabled: true
+constraints:
+  lifo_strict: true
+  buffer_capacity:
+    enabled: true
+    default_capacity: 6
+scenario_params:
+  yard:
+    areas:
+    - A
+    stacks:
+    - area: A
+      stack_id: S1
+      max_levels: 6
+    - area: A
+      stack_id: S2
+      max_levels: 6
+    - area: A
+      stack_id: S3
+      max_levels: 6
+    - area: A
+      stack_id: S4
+      max_levels: 6
+  cutting_lines:
+    ids:
+    - L1
+    - L2
+    - L3
+    - L4
+  equipment:
+    cranes:
+    - crane_id: C1
+      max_load_ton: 50
+      pick_seconds: 25
+      place_seconds: 25
+    travel_model:
+      seconds_per_meter: 0.8
+solver_params:
+  name: baseline_rule
+  policy:
+    outbound_selection: earliest_due_first
+    tie_breaker: min_relocation
+  relocation:
+    allow_temporary_slot: true
+experiment_params:
+  name: toy_exp
+  scenario: toy
+  solver: baseline_rule
+  instance: data/instances/toy_instance.json
+  repetitions: 1
+  seed: 42
+_paths:
+  project_root: /home/jxy/projects/steel-yard-optimizer
+  configs_dir: /home/jxy/projects/steel-yard-optimizer/configs
+  data_dir: /home/jxy/projects/steel-yard-optimizer/data
+  schemas_dir: /home/jxy/projects/steel-yard-optimizer/schemas

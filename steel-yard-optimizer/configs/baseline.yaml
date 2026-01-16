@@ -1,0 +1,54 @@
+version: 1
+
+project:
+  name: steel-yard-optimizer
+  description: "Steel plate yard outbound + relocation optimization toward multiple cutting lines"
+  seed: 42
+
+paths:
+  data_dir: data
+  results_dir: data/results
+  artifacts_dir: artifacts
+
+logging:
+  level: INFO
+
+scenario:
+  # 全局时间模型（脚本不一定全部用到，但建议统一放这里）
+  time_model:
+    # 运输/搬运：固定装卸时间 + 移动时间（按距离*seconds_per_meter）
+    pick_seconds: 25
+    place_seconds: 25
+    seconds_per_meter: 0.8
+    # 切割节拍（可按线不同扩展为 dict）
+    cut_seconds_per_plate: 60
+    # 缓冲区/辊道容量（如果你的 solver 暂时没实现，也先占位）
+    buffer_capacity: 64
+
+  yard:
+    lifo: true              # 堆垛出库 LIFO/层序约束
+    allow_restack: true     # 允许翻板到 buffer 或其它堆位
+    default_max_levels: 16
+
+  cutting_lines:
+    # 如果 instance 里已经带了 lines，这里主要用于默认值/兜底
+    ids: ["L1", "L2", "L3", "L4"]
+    starvation_penalty_seconds: 0
+
+solver:
+  # “运行时选哪个 solver”：baseline / heuristic / rh / xgb
+  mode: baseline
+
+  # 默认加载的 solver 参数文件（各脚本可按 mode 读取）
+  configs:
+    baseline: configs/solver/baseline_rule.yaml
+    heuristic: configs/solver/greedy_lifo.yaml
+    rh: configs/solver/metaheuristic.yaml
+    mip: configs/solver/mip.yaml
+    milp: configs/solver/milp.yaml
+    ga: configs/solver/ga.yaml
+
+export:
+  save_plan_json: true
+  save_metrics_json: true
+  save_exports_csv: true

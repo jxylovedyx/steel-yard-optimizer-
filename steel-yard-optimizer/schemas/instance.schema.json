@@ -1,0 +1,127 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Steel Yard Instance",
+  "type": "object",
+  "required": ["meta", "yard", "equipment", "plates", "demands"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["instance_id", "scenario", "created_at"],
+      "properties": {
+        "instance_id": {"type": "string"},
+        "scenario": {"type": "string"},
+        "created_at": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "yard": {
+      "type": "object",
+      "required": ["stacks"],
+      "properties": {
+        "stacks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["area", "stack_id", "max_levels"],
+            "properties": {
+              "area": {"type": "string"},
+              "stack_id": {"type": "string"},
+              "max_levels": {"type": "integer", "minimum": 1},
+              "x": {"type": "number"},
+              "y": {"type": "number"}
+            },
+            "additionalProperties": true
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "equipment": {
+      "type": "object",
+      "required": ["cranes"],
+      "properties": {
+        "cranes": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": ["crane_id", "max_load_ton", "pick_seconds", "place_seconds"],
+            "properties": {
+              "crane_id": {"type": "string"},
+              "max_load_ton": {"type": "number"},
+              "pick_seconds": {"type": "number"},
+              "place_seconds": {"type": "number"},
+              "seconds_per_meter": {"type": "number"}
+            },
+            "additionalProperties": true
+          }
+        },
+        "travel_model": {
+          "type": "object",
+          "properties": {
+            "seconds_per_meter": {"type": "number"}
+          },
+          "additionalProperties": true
+        }
+      },
+      "additionalProperties": true
+    },
+    "plates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["plate_id", "spec", "location", "blocked_by", "status", "eligible_lines"],
+        "properties": {
+          "plate_id": {"type": "string"},
+          "spec": {
+            "type": "object",
+            "required": ["thickness_mm", "width_mm", "length_mm", "weight_ton"],
+            "properties": {
+              "thickness_mm": {"type": "number"},
+              "width_mm": {"type": "number"},
+              "length_mm": {"type": "number"},
+              "weight_ton": {"type": "number"}
+            },
+            "additionalProperties": true
+          },
+          "location": {
+            "type": "object",
+            "required": ["area", "stack_id", "level"],
+            "properties": {
+              "area": {"type": "string"},
+              "stack_id": {"type": "string"},
+              "level": {"type": "integer", "minimum": 1}
+            },
+            "additionalProperties": true
+          },
+          "blocked_by": {
+            "type": "array",
+            "items": {"type": "string"}
+          },
+          "status": {"type": "string"},
+          "eligible_lines": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "demands": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cutting_line_id", "items"],
+        "properties": {
+          "cutting_line_id": {"type": "string"},
+          "items": {
+            "type": "array",
+            "items": {"type": "string"}
+          }
+        },
+        "additionalProperties": true
+      }
+    }
+  },
+  "additionalProperties": true
+}

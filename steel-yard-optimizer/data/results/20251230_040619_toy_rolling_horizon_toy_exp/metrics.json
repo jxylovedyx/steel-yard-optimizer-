@@ -1,0 +1,13 @@
+{
+  "meta": {
+    "run_id": "20251230_040619_toy_rolling_horizon_toy_exp",
+    "instance_id": "interim_interim",
+    "created_at": "2025-12-29T20:06:50Z"
+  },
+  "kpi": {
+    "makespan_seconds": 1603851.0,
+    "relocation_count": 9506,
+    "line_starvation_seconds": 8377731.0,
+    "crane_utilization": 0.78623
+  }
+}

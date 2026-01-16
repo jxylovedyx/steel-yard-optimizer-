@@ -1,0 +1,38 @@
+version: 1
+
+project:
+  name: steel-yard-optimizer-toy
+  seed: 7
+
+paths:
+  data_dir: data
+  results_dir: data/results
+
+scenario:
+  time_model:
+    pick_seconds: 10
+    place_seconds: 10
+    seconds_per_meter: 0.2
+    cut_seconds_per_plate: 20
+    buffer_capacity: 16
+
+  yard:
+    lifo: true
+    allow_restack: true
+    default_max_levels: 8
+
+  cutting_lines:
+    ids: ["L1", "L2"]
+    starvation_penalty_seconds: 0
+
+solver:
+  mode: baseline
+  configs:
+    baseline: configs/solver/baseline_rule.yaml
+    heuristic: configs/solver/greedy_lifo.yaml
+    rh: configs/solver/metaheuristic.yaml
+
+export:
+  save_plan_json: true
+  save_metrics_json: true
+  save_exports_csv: true

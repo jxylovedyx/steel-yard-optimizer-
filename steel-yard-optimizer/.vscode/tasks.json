@@ -1,0 +1,186 @@
+{
+  "version": "2.0.0",
+  "options": {
+    "cwd": "${workspaceFolder}"
+  },
+  "tasks": [
+    {
+      "label": "00 - Env: conda info (steel)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "echo '[PWD]' $(pwd); echo '[PY]' $(which python3); python3 -V; python3 -c \"import sys; print('[sys.path[0]]', sys.path[0])\"; nvidia-smi || true"
+      ],
+      "problemMatcher": []
+    },
+
+    {
+      "label": "10 - Build: make toy instance",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "python3 scripts/make_instance.py --config configs/toy.yaml --mode toy --out data/instances/toy_instance.json && ls -lah data/instances/toy_instance.json"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "11 - Solve: toy baseline (plan+metrics+exports)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "INST=data/instances/toy_instance.json; ./scripts/infer_and_export.sh \"$INST\" baseline && RUN_ID=\"$(ls -1dt data/results/* | head -n 1 | xargs -n1 basename)\" && echo \"[RUN_ID] $RUN_ID\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "12 - Solve: toy heuristic (plan+metrics+exports)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "INST=data/instances/toy_instance.json; ./scripts/infer_and_export.sh \"$INST\" heuristic && RUN_ID=\"$(ls -1dt data/results/* | head -n 1 | xargs -n1 basename)\" && echo \"[RUN_ID] $RUN_ID\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "13 - Solve: toy rh (plan+metrics+exports)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "INST=data/instances/toy_instance.json; ./scripts/infer_and_export.sh \"$INST\" rh && RUN_ID=\"$(ls -1dt data/results/* | head -n 1 | xargs -n1 basename)\" && echo \"[RUN_ID] $RUN_ID\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200"
+      ],
+      "problemMatcher": []
+    },
+
+    {
+      "label": "20 - Data: generate synthetic raw (big)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "python3 scripts/generate_synthetic_raw.py --out data/raw --areas 4 --stacks-per-area 120 --max-levels 16 --plates 10000 --lines 8 --demand-per-line 1200 --seed 7 --auto-capacity && ls -lah data/raw"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "21 - Data: raw -> interim",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "python3 scripts/import_raw_data.py --raw-dir data/raw --out data/interim && ls -lah data/interim"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "22 - Build: interim -> instance (plantA_today)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "OUT=\"data/instances/plantA_$(date +%Y%m%d).json\"; python3 scripts/make_instance.py --mode interim --interim-dir data/interim --out \"$OUT\" && echo \"[OK] $OUT\" && ls -lah \"$OUT\""
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "23 - Solve: plantA_today baseline (plan+metrics+exports)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "INST=\"data/instances/plantA_$(date +%Y%m%d).json\"; ./scripts/infer_and_export.sh \"$INST\" baseline && RUN_ID=\"$(ls -1dt data/results/* | head -n 1 | xargs -n1 basename)\" && echo \"[RUN_ID] $RUN_ID\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "24 - Solve: plantA_today heuristic (plan+metrics+exports)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "INST=\"data/instances/plantA_$(date +%Y%m%d).json\"; ./scripts/infer_and_export.sh \"$INST\" heuristic && RUN_ID=\"$(ls -1dt data/results/* | head -n 1 | xargs -n1 basename)\" && echo \"[RUN_ID] $RUN_ID\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "25 - Solve: plantA_today rh (plan+metrics+exports)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "INST=\"data/instances/plantA_$(date +%Y%m%d).json\"; ./scripts/infer_and_export.sh \"$INST\" rh && RUN_ID=\"$(ls -1dt data/results/* | head -n 1 | xargs -n1 basename)\" && echo \"[RUN_ID] $RUN_ID\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200"
+      ],
+      "problemMatcher": []
+    },
+
+    {
+      "label": "30 - LTR: make dataset (from results)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "python3 scripts/learn/make_ltr_dataset.py --max-runs 500 --max-candidates 128 && ls -lah data/datasets"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "31 - Train: XGB ranker (GPU)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "python3 scripts/learn/train_xgb_ranker.py --data data/datasets/ltr.parquet --groups data/datasets/ltr.groups.txt --out models/xgb_ranker.json --ndcg-k 10 --rounds 8000 --early-stop 300 --max-bin 256 --max-leaves 256 --lr 0.05"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "32 - Infer: XGB on toy (plan+metrics+exports)",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "python3 scripts/run_solver_xgb.py --instance data/instances/toy_instance.json --model models/xgb_ranker.json --scenario toy --exp xgb && RUN_ID=\"$(ls -1dt data/results/* | head -n 1 | xargs -n1 basename)\" && python3 scripts/compute_metrics.py --plan \"data/results/$RUN_ID/plan.json\" && python3 scripts/export_plan.py --plan \"data/results/$RUN_ID/plan.json\" --out \"data/results/$RUN_ID/exports\" && echo \"[RUN_ID] $RUN_ID\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200"
+      ],
+      "problemMatcher": []
+    },
+
+    {
+      "label": "90 - Inspect: latest RUN_ID + metrics",
+      "type": "shell",
+      "command": "bash",
+      "args": [
+        "-lc",
+        "RUN_ID=\"$(ls -1dt data/results/* 2>/dev/null | head -n 1 | xargs -n1 basename)\"; echo \"[RUN_ID] $RUN_ID\"; test -f \"data/results/$RUN_ID/metrics.json\" && cat \"data/results/$RUN_ID/metrics.json\" | head -n 200 || (echo '[WARN] metrics.json not found' && ls -lah \"data/results/$RUN_ID\" )"
+      ],
+      "problemMatcher": []
+    },
+
+    {
+      "label": "99 - Demo: END-TO-END (toy -> baseline -> metrics)",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "10 - Build: make toy instance",
+        "11 - Solve: toy baseline (plan+metrics+exports)",
+        "90 - Inspect: latest RUN_ID + metrics"
+      ],
+      "problemMatcher": []
+    },
+
+    {
+      "label": "98 - Demo: END-TO-END (synthetic -> plantA_today -> baseline)",
+      "dependsOrder": "sequence",
+      "dependsOn": [
+        "20 - Data: generate synthetic raw (big)",
+        "21 - Data: raw -> interim",
+        "22 - Build: interim -> instance (plantA_today)",
+        "23 - Solve: plantA_today baseline (plan+metrics+exports)",
+        "90 - Inspect: latest RUN_ID + metrics"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}

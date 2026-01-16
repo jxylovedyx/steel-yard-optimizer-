@@ -1,0 +1,23 @@
+name: baseline_rule
+type: rule
+
+# 基线：按需求顺序供料（seq_no），遇到阻挡就翻板（最简单可复现）
+policy:
+  select_next_plate:
+    method: demand_order     # demand_order | random | fifo
+  relocation:
+    method: to_buffer_then_restore   # to_buffer_then_restore | to_other_stack | forbid
+    max_chain: 9999
+
+tie_break:
+  # 多候选时的排序规则（从上到下依次生效）
+  - min_blockers          # 优先阻挡少
+  - min_distance          # 距离更近（如果你的实例里有坐标）
+  - min_weight            # 更轻更快（可选）
+
+limits:
+  max_candidates_per_step: 128
+
+notes: |
+  这是 baseline，用于对比。
+  目标不是最优，而是稳定、可复现、输出完整 plan/metrics。

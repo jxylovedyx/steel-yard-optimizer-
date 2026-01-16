@@ -1,0 +1,43 @@
+version: 1
+project:
+  name: steel-yard-optimizer
+  description: Steel plate yard outbound + relocation optimization toward multiple
+    cutting lines
+  seed: 42
+paths:
+  data_dir: data
+  results_dir: data/results
+  artifacts_dir: artifacts
+logging:
+  level: INFO
+scenario:
+  time_model:
+    pick_seconds: 25
+    place_seconds: 25
+    seconds_per_meter: 0.8
+    cut_seconds_per_plate: 60
+    buffer_capacity: 64
+  yard:
+    lifo: true
+    allow_restack: true
+    default_max_levels: 16
+  cutting_lines:
+    ids:
+    - L1
+    - L2
+    - L3
+    - L4
+    starvation_penalty_seconds: 0
+solver:
+  mode: baseline
+  configs:
+    baseline: configs/solver/baseline_rule.yaml
+    heuristic: configs/solver/greedy_lifo.yaml
+    rh: configs/solver/metaheuristic.yaml
+    mip: configs/solver/mip.yaml
+    milp: configs/solver/milp.yaml
+    ga: configs/solver/ga.yaml
+export:
+  save_plan_json: true
+  save_metrics_json: true
+  save_exports_csv: true

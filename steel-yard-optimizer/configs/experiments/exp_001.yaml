@@ -1,0 +1,23 @@
+name: exp_001_baselines
+description: "baseline vs heuristic vs rh on toy + synthetic"
+seed: 7
+
+instances:
+  - id: toy
+    path: data/instances/toy_instance.json
+  # 你也可以加真实/合成的大实例
+  # - id: plantA
+  #   path: data/instances/plantA_YYYYMMDD.json
+
+solvers:
+  - mode: baseline
+    config: configs/solver/baseline_rule.yaml
+  - mode: heuristic
+    config: configs/solver/greedy_lifo.yaml
+  - mode: rh
+    config: configs/solver/metaheuristic.yaml
+
+metrics:
+  - makespan_seconds
+  - relocation_count
+  - line_starvation_seconds

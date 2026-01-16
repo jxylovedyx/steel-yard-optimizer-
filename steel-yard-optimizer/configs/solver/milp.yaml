@@ -1,0 +1,19 @@
+name: milp
+type: milp
+
+solver_backend:
+  name: ortools
+  time_limit_seconds: 120
+  mip_gap: 0.01
+
+model:
+  enforce_lifo: true
+  objective:
+    primary: makespan
+    secondary: relocations
+  linearization:
+    big_m: 1000000
+
+notes: |
+  MILP 与 MIP 类似，强调线性化（big-M）。
+  作为论文内容很好写，但只建议在小规模上跑。

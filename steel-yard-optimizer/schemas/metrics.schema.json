@@ -1,0 +1,30 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Steel Yard Metrics",
+  "type": "object",
+  "required": ["meta", "kpi"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["run_id", "instance_id", "created_at"],
+      "properties": {
+        "run_id": {"type": "string"},
+        "instance_id": {"type": "string"},
+        "created_at": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "kpi": {
+      "type": "object",
+      "required": ["makespan_seconds", "relocation_count", "line_starvation_seconds", "crane_utilization"],
+      "properties": {
+        "makespan_seconds": {"type": "number"},
+        "relocation_count": {"type": "integer"},
+        "line_starvation_seconds": {"type": "number"},
+        "crane_utilization": {"type": "number"}
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": true
+}

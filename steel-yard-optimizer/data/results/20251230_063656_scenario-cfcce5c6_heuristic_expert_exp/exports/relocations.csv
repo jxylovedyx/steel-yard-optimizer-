@@ -1,0 +1,21 @@
+task_id,plate_id,from,to,reason,estimated_seconds
+R_L1_P005_P006_1,P006,"{'area': 'A', 'stack_id': 'S1', 'level': 6}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P017_P018_2,P018,"{'area': 'A', 'stack_id': 'S3', 'level': 6}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P009_P010_3,P010,"{'area': 'A', 'stack_id': 'S2', 'level': 4}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P009_P011_4,P011,"{'area': 'A', 'stack_id': 'S2', 'level': 5}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P009_P012_5,P012,"{'area': 'A', 'stack_id': 'S2', 'level': 6}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P021_P022_6,P022,"{'area': 'A', 'stack_id': 'S4', 'level': 4}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P021_P023_7,P023,"{'area': 'A', 'stack_id': 'S4', 'level': 5}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P021_P024_8,P024,"{'area': 'A', 'stack_id': 'S4', 'level': 6}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P001_P002_9,P002,"{'area': 'A', 'stack_id': 'S1', 'level': 2}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P001_P003_10,P003,"{'area': 'A', 'stack_id': 'S1', 'level': 3}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P001_P004_11,P004,"{'area': 'A', 'stack_id': 'S1', 'level': 4}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P001_P005_12,P005,"{'area': 'A', 'stack_id': 'S1', 'level': 5}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P013_P014_13,P014,"{'area': 'A', 'stack_id': 'S3', 'level': 2}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P013_P015_14,P015,"{'area': 'A', 'stack_id': 'S3', 'level': 3}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P013_P016_15,P016,"{'area': 'A', 'stack_id': 'S3', 'level': 4}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L1_P013_P017_16,P017,"{'area': 'A', 'stack_id': 'S3', 'level': 5}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L3_P007_P008_17,P008,"{'area': 'A', 'stack_id': 'S2', 'level': 2}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L3_P007_P009_18,P009,"{'area': 'A', 'stack_id': 'S2', 'level': 3}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L3_P019_P020_19,P020,"{'area': 'A', 'stack_id': 'S4', 'level': 2}",{'buffer_id': 'BUF1'},unblock,66.0
+R_L3_P019_P021_20,P021,"{'area': 'A', 'stack_id': 'S4', 'level': 3}",{'buffer_id': 'BUF1'},unblock,66.0

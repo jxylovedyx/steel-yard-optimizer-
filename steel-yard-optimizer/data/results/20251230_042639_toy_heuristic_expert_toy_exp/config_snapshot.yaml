@@ -1,0 +1,19 @@
+scenario: toy
+solver: baseline_rule
+experiment: toy_exp
+io:
+  instance_path: data/instances/toy_instance.json
+  output_dir: data/results
+logging:
+  level: INFO
+objectives:
+  strategy: lexicographic
+  makespan:
+    enabled: true
+  relocations:
+    enabled: true
+constraints:
+  lifo_strict: true
+  buffer_capacity:
+    enabled: true
+    default_capacity: 6

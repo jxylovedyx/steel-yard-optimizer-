@@ -1,0 +1,6 @@
+name: plantA_daily_roll
+scenario: plantA
+solver: metaheuristic
+instance: data/instances/plantA_yyyymmdd.json
+repetitions: 3
+seed: 2025

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Steel Yard Plan",
+  "type": "object",
+  "required": ["meta", "line_sequences", "relocations", "crane_tasks", "warnings"],
+  "properties": {
+    "meta": {
+      "type": "object",
+      "required": ["run_id", "instance_id", "solver", "created_at"],
+      "properties": {
+        "run_id": {"type": "string"},
+        "instance_id": {"type": "string"},
+        "solver": {"type": "string"},
+        "created_at": {"type": "string"}
+      },
+      "additionalProperties": true
+    },
+    "line_sequences": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["cutting_line_id", "sequence"],
+        "properties": {
+          "cutting_line_id": {"type": "string"},
+          "sequence": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["plate_id", "seq_no", "eta_seconds", "start_seconds", "finish_seconds"],
+              "properties": {
+                "plate_id": {"type": "string"},
+                "seq_no": {"type": "integer", "minimum": 1},
+                "eta_seconds": {"type": "number"},
+                "start_seconds": {"type": "number"},
+                "finish_seconds": {"type": "number"}
+              },
+              "additionalProperties": true
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "relocations": {
+      "type": "array",
+      "items": {"type": "object"},
+      "additionalProperties": true
+    },
+    "crane_tasks": {
+      "type": "array",
+      "items": {"type": "object"},
+      "additionalProperties": true
+    },
+    "warnings": {
+      "type": "array",
+      "items": {"type": "string"}
+    }
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,36 @@
+{
+  "created_at": "2025-12-29T18:49:27Z",
+  "raw_dir": "/home/jxy/projects/steel-yard-optimizer/data/raw",
+  "interim_dir": "/home/jxy/projects/steel-yard-optimizer/data/interim",
+  "tables": {
+    "plates": {
+      "status": "ok",
+      "rows": 7680,
+      "cols": 12,
+      "missing_required": [],
+      "written_to": "/home/jxy/projects/steel-yard-optimizer/data/interim/plates.csv"
+    },
+    "yard_stacks": {
+      "status": "ok",
+      "rows": 480,
+      "cols": 3,
+      "missing_required": [],
+      "written_to": "/home/jxy/projects/steel-yard-optimizer/data/interim/yard_stacks.csv"
+    },
+    "equipment_cranes": {
+      "status": "ok",
+      "rows": 1,
+      "cols": 5,
+      "missing_required": [],
+      "written_to": "/home/jxy/projects/steel-yard-optimizer/data/interim/equipment_cranes.csv"
+    },
+    "demands": {
+      "status": "ok",
+      "rows": 7680,
+      "cols": 3,
+      "missing_required": [],
+      "written_to": "/home/jxy/projects/steel-yard-optimizer/data/interim/demands.csv"
+    }
+  },
+  "global_issues": []
+}

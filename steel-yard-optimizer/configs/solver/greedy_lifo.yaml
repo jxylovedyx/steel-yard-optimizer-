@@ -1,0 +1,33 @@
+name: greedy_lifo
+type: heuristic
+
+# 启发式：在满足各切割线需求的前提下，每一步选择“边际翻板最少 + 完工时间更短”的板
+objective_weights:
+  makespan: 1.0
+  relocations: 0.2
+  starvation: 0.1
+
+policy:
+  select_next_plate:
+    method: greedy_score
+    score_terms:
+      - term: blockers_count
+        weight: 1.0
+      - term: travel_time
+        weight: 0.2
+      - term: line_starvation_risk
+        weight: 0.3
+
+  relocation:
+    method: best_buffer_slot
+    prefer:
+      - keep_same_area
+      - keep_future_access
+
+limits:
+  max_candidates_per_step: 256
+  max_relocations_per_plate: 64
+
+notes: |
+  greedy_lifo 用来显著降低翻板次数、减少缺料。
+  若你已实现 run_solver_heuristic.py，可把这些参数读进去。

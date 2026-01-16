@@ -1,0 +1,18 @@
+name: mip
+type: mip
+
+# 用于小规模 instance（toy/小样本），求近似最优或下界
+solver_backend:
+  name: ortools       # ortools | gurobi | cplex
+  time_limit_seconds: 60
+  mip_gap: 0.02
+
+model:
+  enforce_lifo: true
+  buffer_capacity: 64
+  objective:
+    primary: makespan
+    secondary: relocations
+
+notes: |
+  MIP/MILP 更适合作为“对照实验”和“小规模最优性验证”。

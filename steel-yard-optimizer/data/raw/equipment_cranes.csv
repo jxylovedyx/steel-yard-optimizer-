@@ -1,0 +1,2 @@
+crane_id,max_load_ton,pick_seconds,place_seconds,seconds_per_meter
+C1,50,25,25,0.8

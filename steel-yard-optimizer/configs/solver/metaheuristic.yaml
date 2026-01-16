@@ -1,0 +1,31 @@
+name: rolling_horizon_meta
+type: metaheuristic
+
+# 滚动时域 + 局部搜索/退火（适合双目标：makespan + 翻板）
+rolling_horizon:
+  window_steps: 400              # 每次只规划未来多少步
+  replan_every_steps: 50         # 多久重规划一次
+  max_runtime_seconds: 30        # 单次规划时间预算
+
+search:
+  method: simulated_annealing     # simulated_annealing | tabu | hillclimb
+  iterations: 3000
+  start_temp: 1.0
+  end_temp: 0.02
+  cooling: 0.995
+  neighbor_ops:
+    - swap_within_line
+    - swap_across_lines
+    - move_blocker_earlier
+    - buffer_reassign
+
+objective_weights:
+  makespan: 1.0
+  relocations: 0.3
+  starvation: 0.2
+
+limits:
+  max_candidates_per_step: 256
+
+notes: |
+  metaheuristic 适合做“论文/毕设亮点”，并且能解释双目标折中。

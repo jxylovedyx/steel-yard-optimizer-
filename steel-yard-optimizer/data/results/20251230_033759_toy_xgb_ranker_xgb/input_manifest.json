@@ -1,0 +1,7 @@
+{
+  "run_id": "20251230_033759_toy_xgb_ranker_xgb",
+  "instance_path": "/home/jxy/projects/steel-yard-optimizer/data/instances/toy_instance.json",
+  "instance_sha256": "86678585c227126084f7401c2344044091f36979c3ddbdf3bfbff9660d3143c8",
+  "model_path": "/home/jxy/projects/steel-yard-optimizer/models/xgb_ranker.json",
+  "created_at": "2025-12-30T03:38:00+0800"
+}
